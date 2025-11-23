@@ -1,0 +1,3119 @@
+{
+  "took": 10,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 100,
+      "relation": "eq"
+    },
+    "max_score": 1.0,
+    "hits": [
+      {
+        "_index": "logs-payment-prod",
+        "_id": "e247a8fc-c492-48a7-b31e-12b519f3c6da",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:17.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Database connection timeout [req_id=9360]",
+          "trace": {
+            "id": "trace-4a1e310058aa4703"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 3039
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "bbd10369-606a-4752-9996-2e84be44571d",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:26.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "API request received [req_id=3239]",
+          "trace": {
+            "id": "trace-e38a5aa8184d4058"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3451
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "b3388ea4-3940-4817-aa38-d53bf4f1ef0b",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:31.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=9983]",
+          "trace": {
+            "id": "trace-96f8a36e0e004600"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3346
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "a3a53825-821e-4eb9-a5e6-1524abc48e9d",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:26.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "High latency detected [req_id=6013]",
+          "trace": {
+            "id": "trace-10ec336d3e494d83"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 1752
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "08708077-73da-4e4a-ab70-9d8578b51da8",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:49.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Database connection timeout [req_id=4345]",
+          "trace": {
+            "id": "trace-f2e237af48bd4a72"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 1947
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "914b66d3-2453-47a1-8502-e62ac2f5afdf",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:37.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "OOM: Heap limit exceeded [req_id=9150]",
+          "trace": {
+            "id": "trace-4242c34dbbfc44d6"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 3523
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "e7ef7455-16f4-449e-bece-82706cd8e71d",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:17.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Deprecated API usage warning [req_id=8338]",
+          "trace": {
+            "id": "trace-d55903c84c1f4a1b"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 2718
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "a89bbf48-2bf7-4ccd-aa42-e619895eb791",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:13.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=2736]",
+          "trace": {
+            "id": "trace-2fdf241671524cd5"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1657
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "d8903be9-37b1-4f74-80a8-d1a692d679a7",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:21.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Cache refreshed [req_id=2342]",
+          "trace": {
+            "id": "trace-0e4bba1d2e474cfb"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4286
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "ed454bdc-a383-4cb8-8f4d-92fd19fbdcf4",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:26.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Health check passed [req_id=6298]",
+          "trace": {
+            "id": "trace-4ff37535f9524513"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3748
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "1a58edb7-2305-41ed-bd1c-9f86d97a98f0",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:37.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "OOM: Heap limit exceeded [req_id=2247]",
+          "trace": {
+            "id": "trace-fcfde921c4974b2e"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 1948
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "24b33934-25f9-468c-ae5e-1976d083e61c",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:34.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=1289]",
+          "trace": {
+            "id": "trace-bbd390b32c6c4584"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1471
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "9b7bbbbe-fa0b-40ba-b1b4-3757d7d6f53b",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:05.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Cache refreshed [req_id=6658]",
+          "trace": {
+            "id": "trace-e89de7acbee244e9"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3321
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "c7c25ab5-7eb2-4e63-b7c9-cf473ac7ff00",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:09.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "API request received [req_id=4150]",
+          "trace": {
+            "id": "trace-1a7db6f7d5254386"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1111
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "6d82f2c6-f382-4bea-9264-57f85da774b2",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:24:09.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=6089]",
+          "trace": {
+            "id": "trace-57e2cd04efe7493e"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 438
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "d2ef8a5d-1d4d-498e-9e0d-7706e0caf5a8",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:17.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Database connection timeout [req_id=6406]",
+          "trace": {
+            "id": "trace-fd15427dee314782"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 517
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "dc1579f2-a8e0-4c09-96cd-567bb793c127",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:49.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=5469]",
+          "trace": {
+            "id": "trace-17c72e5fdfb04e90"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3031
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "1231a79e-e343-4c66-93f1-8118ec760984",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:34.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Health check passed [req_id=6246]",
+          "trace": {
+            "id": "trace-4765dcf896a34ca8"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 2648
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "2b15e30b-4430-4b91-8fba-fbb63b93670c",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:24:59.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "High latency detected [req_id=8108]",
+          "trace": {
+            "id": "trace-4befdbc19523409b"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 4106
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "1f92ff36-1e79-451b-b485-15ff12bb76a7",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:24:30.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Cache refreshed [req_id=3424]",
+          "trace": {
+            "id": "trace-38fde2db959d493e"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4197
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "ee5354e7-7064-4d3b-aff4-db9e65795433",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:17.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Disk usage above 80% [req_id=1886]",
+          "trace": {
+            "id": "trace-e9e4254252fd42f3"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 3969
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "ec43eb15-1593-4daa-adc0-2c07a63d96d8",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:38.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "API request received [req_id=6936]",
+          "trace": {
+            "id": "trace-69e0445840f94e8a"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 823
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "febb59bb-822d-4cd0-b5f1-2004666025eb",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:35.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=7296]",
+          "trace": {
+            "id": "trace-e9ef1b35bc8d47a9"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3051
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "6e3687b8-35c9-4708-9e98-82c9657e078e",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:44.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=4746]",
+          "trace": {
+            "id": "trace-43449e6a5c6f4c1f"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 2334
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "77d1ff7a-3161-41d3-9307-644929358c50",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:29.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Rate limit approaching [req_id=9490]",
+          "trace": {
+            "id": "trace-01d3f14311e24472"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 1132
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "6461cb5a-fa18-4944-a394-71ef7e8d89fa",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:24:22.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=6227]",
+          "trace": {
+            "id": "trace-1bcf4477107e449c"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3799
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "c7e543d1-87eb-4f7b-b674-f3373a8ed12d",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:43.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=5278]",
+          "trace": {
+            "id": "trace-63623b3cc0a0449d"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4968
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "6d21982c-6595-419c-abcb-55d9a1ea886e",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:53.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=3113]",
+          "trace": {
+            "id": "trace-b4cbc033ad554dd5"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1144
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "d32e7ae9-bdf3-403b-aa8c-219bf7eceded",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:26:01.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=3683]",
+          "trace": {
+            "id": "trace-6915a1aa3f5b483f"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 972
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "edc74690-031a-43cb-831c-10c5b605fa54",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:15.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=3339]",
+          "trace": {
+            "id": "trace-fd1c7810d98143b0"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 114
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "1b773b4e-b488-46d4-b36c-e3860c948510",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:26:47.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=9159]",
+          "trace": {
+            "id": "trace-6e7cdaa9cd5441b1"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 2322
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "19f27feb-0024-4030-a8dd-e826a4ed69f9",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:23.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Validation Error: Invalid payload [req_id=9204]",
+          "trace": {
+            "id": "trace-cd5a30f13cb04203"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 2082
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "258d3a93-195e-418f-98e1-eeca2c48fd1a",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:27:05.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "API request received [req_id=2341]",
+          "trace": {
+            "id": "trace-c0d9e2cf9b4040a8"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1801
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "f8bce382-231d-450b-8188-18635f0eaacc",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:24:29.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Cache refreshed [req_id=2619]",
+          "trace": {
+            "id": "trace-82fd7e2c02c743aa"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 683
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "145d66f1-aeea-42f4-b200-9d7bc197eaab",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:25.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Cache refreshed [req_id=1838]",
+          "trace": {
+            "id": "trace-31317de94c2844ee"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1488
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "38d1042f-fc67-4143-b14a-44411fe74fb4",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:52.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Health check passed [req_id=5971]",
+          "trace": {
+            "id": "trace-1cc10837749f4d87"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1717
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "802822c9-90d4-4a5c-9fa7-e8afe3281c2c",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:22:53.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Cache refreshed [req_id=5345]",
+          "trace": {
+            "id": "trace-df6f89e8c8974a5e"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 465
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "8345aad7-7dd4-4c94-be04-31721669753d",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:22.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Validation Error: Invalid payload [req_id=2875]",
+          "trace": {
+            "id": "trace-2ceeeef13ffc45f4"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 1928
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "101eaa72-9023-409c-819e-c7d298c5cf5b",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:27.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Validation Error: Invalid payload [req_id=8709]",
+          "trace": {
+            "id": "trace-bf7e89d63ea34835"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 4152
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "ad86fbab-0343-40ea-94e3-cdc286742ea3",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:27:29.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=6152]",
+          "trace": {
+            "id": "trace-badee33b09e3453c"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 2754
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "e12a5db5-44d1-4321-a199-ad79ad06873e",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:28:17.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Health check passed [req_id=8381]",
+          "trace": {
+            "id": "trace-f9fca50e1ef34287"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3411
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "cdfa83be-2a71-43b7-bb42-d9e53ab0c736",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:27:45.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=1957]",
+          "trace": {
+            "id": "trace-08df41a0e5b54868"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 618
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "eabe92f0-e01d-453b-9899-1c7d79d2d510",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:24:23.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "API request received [req_id=4261]",
+          "trace": {
+            "id": "trace-ed1349926e7f486c"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 2056
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "8016f5cd-329a-40c7-ae26-5362933de3e6",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:09.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=2645]",
+          "trace": {
+            "id": "trace-e82a8e06b7664fd9"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4127
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "e19daab2-fe02-48f7-ad08-c1a177a4453b",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:28:09.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=3582]",
+          "trace": {
+            "id": "trace-49761e3d62294922"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4145
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "2d9247ec-3c66-422d-a0fa-6507b1f4fd54",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:24:32.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "High latency detected [req_id=2359]",
+          "trace": {
+            "id": "trace-2bef0488c90f4e7b"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 3545
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "ace9295d-1cbe-4d45-bacf-38df5f719290",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:27:39.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=6748]",
+          "trace": {
+            "id": "trace-3a8964dfa84d4ebb"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1821
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "70cbc22c-24f0-42aa-954b-31622bd55ec0",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:25.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Health check passed [req_id=9884]",
+          "trace": {
+            "id": "trace-ba9a2c2e764048de"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 485
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "b9a10566-1591-493e-a6b8-8afef3407607",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:26:17.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=6918]",
+          "trace": {
+            "id": "trace-0bcc72630662494d"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 47
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "404bf085-964f-4787-9f99-76a9270b00f8",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:55.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=1547]",
+          "trace": {
+            "id": "trace-ba1c28a92b314938"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 2545
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "aae93108-efa6-4e9e-9f1f-d7ac176436a9",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:29:47.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "High latency detected [req_id=9464]",
+          "trace": {
+            "id": "trace-b1c767b92d764bd9"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 4301
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "c2a75ca1-892a-43f1-8010-45fe1440caea",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:24:50.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=2988]",
+          "trace": {
+            "id": "trace-5fdae30832314e90"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4872
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "200b9db7-2e9a-4187-a8d4-5565ca7dea6f",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:26:37.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Cache refreshed [req_id=7231]",
+          "trace": {
+            "id": "trace-e942565a8c244fc9"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 102
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "cff52ba1-0fac-4015-90a1-d7f8f1bdb8ad",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:24:03.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=6979]",
+          "trace": {
+            "id": "trace-eab460b46a76478a"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4768
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "6258ef03-6da9-4e1e-b3c9-7930b6d5342a",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:53.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=5060]",
+          "trace": {
+            "id": "trace-a09b66b10ccc45b5"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3595
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "9cbe7689-5a48-4a26-8273-40676642b1cf",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:57.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Disk usage above 80% [req_id=9967]",
+          "trace": {
+            "id": "trace-5fa33c3b1f84454d"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 1700
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "60a4b2b0-f09f-490a-941c-4ca558b88e38",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:27:53.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Health check passed [req_id=7231]",
+          "trace": {
+            "id": "trace-f1da5b2a06d14242"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4267
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "5b905f85-76b3-467c-9d54-03666cf2eff5",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:26:05.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Health check passed [req_id=9148]",
+          "trace": {
+            "id": "trace-9634c6d540974080"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3937
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "f7983649-99eb-40b1-b27e-222d2ac205b4",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:24:13.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=4252]",
+          "trace": {
+            "id": "trace-8ba6a0ac6f094a2f"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4208
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "8984f020-675c-4b34-9d50-87afa80fd697",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:24:15.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Disk usage above 80% [req_id=8766]",
+          "trace": {
+            "id": "trace-0dd762a035b0405b"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 177
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "e72ca471-0d88-48be-9385-d6d7c02a5ad3",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:17.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=7933]",
+          "trace": {
+            "id": "trace-5691967a6ca34b7b"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4282
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "459a62d2-ee1a-4188-95b6-08bdea8ad2af",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:26:21.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=2282]",
+          "trace": {
+            "id": "trace-48ab7a5375914298"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3945
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "820e0fbb-f14d-4b00-bc5e-c7e58a814de3",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:26:25.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=3707]",
+          "trace": {
+            "id": "trace-30f2917c4d544a99"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3560
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "879d267e-444c-49ed-b16e-2b99ef589a75",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:30:41.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=6901]",
+          "trace": {
+            "id": "trace-fa78435a8cf948db"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 2553
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "c6a22707-2dd4-4838-b5ed-62483a5569a6",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:27:37.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=9276]",
+          "trace": {
+            "id": "trace-4949ef23203343ba"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4278
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "740a60f3-8a43-402f-8e93-abb975a8f98f",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:32:02.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=4345]",
+          "trace": {
+            "id": "trace-081ff8db179c4a48"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 2135
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "d981362a-05c1-4fb5-b84f-a6229c322961",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:32:11.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=9452]",
+          "trace": {
+            "id": "trace-0db34f4f3f5d48cc"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4058
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "cff88ab6-5c07-4ea4-9b41-fade5d130f3f",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:30:06.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "API request received [req_id=5866]",
+          "trace": {
+            "id": "trace-98707c77195a42b8"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 409
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "d462c7fe-71cd-49e4-80b2-9fb4e71872b1",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:26:49.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Deprecated API usage warning [req_id=8311]",
+          "trace": {
+            "id": "trace-b6d97ee158614d97"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 3975
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "14cf3312-a5f6-4266-9d44-ab8fff05f83b",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:30:20.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=5224]",
+          "trace": {
+            "id": "trace-bb0f769f894a439f"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4062
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "880a7ae6-dfba-47e3-9c5f-c6c218d0c43b",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:47.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Health check passed [req_id=4425]",
+          "trace": {
+            "id": "trace-6c28dcc1592a44b4"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 307
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "2451613d-86f5-4c7a-935f-1497e2f0525a",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:50.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Health check passed [req_id=7275]",
+          "trace": {
+            "id": "trace-19c2b01b05124b4d"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3304
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "dcb626ec-5c30-413d-8312-5c3ec4c5c805",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:28:17.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Unhandled Promise Rejection: TypeError [req_id=8821]",
+          "trace": {
+            "id": "trace-b55afc11d91845d6"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 4142
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "34f6f2fb-729d-4dac-bb9e-0920ac8682ac",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:56.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Unhandled Promise Rejection: TypeError [req_id=1410]",
+          "trace": {
+            "id": "trace-6c14dab8fd274892"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 2809
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "9950f316-6829-4481-b6fa-00c611889db2",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:27:13.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "High latency detected [req_id=4359]",
+          "trace": {
+            "id": "trace-12670f5f30464c28"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 1300
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "05b67dae-67d1-4a52-88e3-d9ed9c2a965e",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:34:47.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment gateway 502 Bad Gateway [req_id=8009]",
+          "trace": {
+            "id": "trace-7195be769cec4728"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 2833
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "7915ddb9-8b05-409a-a618-bdc57c055be8",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:28:37.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Disk usage above 80% [req_id=3059]",
+          "trace": {
+            "id": "trace-0c4e4a93eb7b4ef2"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 4232
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "ac283c34-dc79-40a0-8971-eb3ab861b07d",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:33:50.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=6096]",
+          "trace": {
+            "id": "trace-3f64fa1e309844a0"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 2265
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "872b2b5f-d94b-4542-ab93-001bb99d7789",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:33:59.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Health check passed [req_id=2253]",
+          "trace": {
+            "id": "trace-3a204ad0a5fd448b"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1741
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "7ef07929-c46e-47af-b850-4fb870629443",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:31:30.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Cache refreshed [req_id=9230]",
+          "trace": {
+            "id": "trace-af8a643dac244493"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 2316
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "114c4d12-c9f5-40b6-a7b3-bb6584802151",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:30:17.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=8896]",
+          "trace": {
+            "id": "trace-10e41eb0a9de47de"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1867
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "7523277f-5fab-408b-b122-6f283bea1425",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:33:05.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Rate limit approaching [req_id=8553]",
+          "trace": {
+            "id": "trace-4f39c6414928470f"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 3675
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "d4db59f8-fa10-4927-a1b8-8693eb533cb0",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:33:13.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=4119]",
+          "trace": {
+            "id": "trace-aadf0eba26f74641"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 4886
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "1a8f1707-5799-4b34-a075-48d6be4a87f2",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:34:44.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Disk usage above 80% [req_id=9835]",
+          "trace": {
+            "id": "trace-d4e1290efcbf4292"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 1379
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "9f03fd73-6c5b-4fca-88ea-a1aa1aa49215",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:05.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Cache refreshed [req_id=3312]",
+          "trace": {
+            "id": "trace-05b4bc25ff634da1"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3687
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "fcb04604-0299-47bf-8b03-67609fa6b075",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:29:22.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=6594]",
+          "trace": {
+            "id": "trace-af03f968d72e4c35"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1046
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "70d961d9-d6d8-4640-bed0-70c0a362f855",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:30:53.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=2533]",
+          "trace": {
+            "id": "trace-e194e98beaed4e72"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1572
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "b1451304-89f6-45cd-9684-1ee48d6737cc",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:25:11.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Database connection timeout [req_id=1519]",
+          "trace": {
+            "id": "trace-4ccab525c9824d64"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 72
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "cc8eccdb-fdc9-4f50-988c-0338bd4a023f",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:45.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Deprecated API usage warning [req_id=5802]",
+          "trace": {
+            "id": "trace-10e4311b556845d1"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 1077
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "1b3e2479-e1f9-4dc8-82fc-e2c6269a0bfd",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:31:11.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "API request received [req_id=4831]",
+          "trace": {
+            "id": "trace-66ee11e51ef34b9c"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1941
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "28e39ce8-92ed-455b-b3dd-a356bb079afb",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:28:17.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Order created [req_id=7737]",
+          "trace": {
+            "id": "trace-d948c49345f748e0"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 1918
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "c2ed8220-2280-422b-9c46-c0a117b30a05",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:37:27.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=2199]",
+          "trace": {
+            "id": "trace-0103f6d596894b58"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/process"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 937
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "a943fd64-dc24-4c93-9527-6767288da484",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:34:33.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Payment processed successfully [req_id=1219]",
+          "trace": {
+            "id": "trace-be9174f337bb4427"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3394
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "60fcf499-7878-40bb-a619-43825325f270",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:33:08.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "API request received [req_id=9634]",
+          "trace": {
+            "id": "trace-9f5c1bc7fc5243b6"
+          },
+          "http": {
+            "request": {
+              "method": "GET",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3788
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "3f8c9d45-7859-41b7-8400-0ce6e718ed0a",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:33:15.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "API request received [req_id=8330]",
+          "trace": {
+            "id": "trace-7c7dc5f922b3400a"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3854
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "db0c293e-8777-498d-bceb-f0160742dc21",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:33:22.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "High latency detected [req_id=3140]",
+          "trace": {
+            "id": "trace-3259a33f64ba4719"
+          },
+          "http": {
+            "request": {
+              "method": "PUT",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 683
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "1f5fab8e-7059-46c3-a52b-3214411e3597",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:27:05.343717Z",
+          "log": {
+            "level": "WARN"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Cache miss for product [req_id=4044]",
+          "trace": {
+            "id": "trace-6e52bf7dec1e4cd4"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 429,
+              "body_bytes": 1152
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "0453e3cf-9b31-4e47-a1f3-8a9498da486e",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:33:36.343717Z",
+          "log": {
+            "level": "ERROR"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "Unhandled Promise Rejection: TypeError [req_id=1989]",
+          "trace": {
+            "id": "trace-eea93129cee446f5"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/user"
+            },
+            "response": {
+              "status_code": 500,
+              "body_bytes": 4234
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "adbcd64c-f6c3-4986-9813-9314a8f7416e",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:23:55.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "User profile retrieved [req_id=2703]",
+          "trace": {
+            "id": "trace-eb1f3d3068b64174"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/status"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 3519
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-1-xyz"
+          }
+        }
+      },
+      {
+        "_index": "logs-payment-prod",
+        "_id": "fea1ad7e-c605-4505-8395-833c05cd9c02",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2025-11-23T09:38:47.343717Z",
+          "log": {
+            "level": "INFO"
+          },
+          "service": {
+            "name": "payment-service"
+          },
+          "message": "API request received [req_id=4269]",
+          "trace": {
+            "id": "trace-462edd896a1745b9"
+          },
+          "http": {
+            "request": {
+              "method": "POST",
+              "url": "/api/v1/refund"
+            },
+            "response": {
+              "status_code": 200,
+              "body_bytes": 2209
+            }
+          },
+          "host": {
+            "name": "gke-node-pool-2-abc"
+          }
+        }
+      }
+    ]
+  }
+}
