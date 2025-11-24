@@ -26,7 +26,11 @@ MODEL_NAME = "gemini-2.5-flash-lite"
 APP_NAME = "log_ingestion_app"
 USER_ID = "test_user"
 SESSION_NAME = "ingestion_session"
-LOG_FILE_PATH = '/Users/ashish/Documents/genai/ai_agents/google-adk/capestoneProject/synthetic_nodejs_logs.json'
+LOG_FILE_PATH = "/Users/ashish/Documents/genai/predictive-incident-response/synthetic_nodejs_logs.json"
+PIPELINE_STATE = {
+    "latest_log_artifact": None,
+    "latest_feature_artifact": None
+}
 
 retry_config = types.HttpRetryOptions(
     attempts=5,
@@ -56,10 +60,12 @@ def ingest_logs(log_file: str) -> str:
 
         output_filename = f"ingested_logs_output.json"
         output_path = os.path.join(full_artifact_dir, output_filename)
+    
         
         with open(output_path, 'w') as f_out:
             json.dump(logs, f_out, indent=2)
 
+        PIPELINE_STATE["latest_log_artifact"] = output_path
         count = len(logs)
         print(f"DEBUG: 📂 File saved to -> {output_path}")
         return f"✅ Success. Ingested {count} logs. Data saved to artifact: '{output_path}'"
@@ -69,6 +75,66 @@ def ingest_logs(log_file: str) -> str:
     except Exception as e:
         return f"Error processing logs: {str(e)}"
 
+
+def extract_features() -> str:
+    """
+    Reads ingested logs and calculates features (Error Rate, 5xx count).
+    Args: None
+    Returns: str - Status message with feature file path or error.
+    """
+    target_path = PIPELINE_STATE.get("latest_log_artifact")
+    print(f"DEBUG: 📥 Preprocessor reading global state -> {target_path}")
+    if not target_path:
+        return "❌ Error: 'latest_log_artifact' is missing from global state. Did the Ingestor run?"
+    
+    if not os.path.exists(target_path):
+        return f"❌ Error: File found in state but missing on disk at {target_path}"
+    
+    try:
+
+        with open(target_path, 'r') as f:
+            logs = json.load(f)
+
+        total_logs = len(logs)
+        error_count = 0
+        warning_count = 0
+        http_5xx = 0
+
+        for log in logs:
+            level = log.get("log", {}).get("level", "INFO")
+            status = log.get("http", {}).get("response", {}).get("status_code", 200)
+
+            if level == "ERROR":
+                error_count += 1
+            if level == "WARN":
+                warning_count += 1
+            if status and int(status) >= 500:
+                http_5xx += 1
+
+        error_rate = (error_count / total_logs) * 100 if total_logs > 0 else 0
+
+        features = {
+            "total_logs": total_logs,
+            "error_count": error_count,
+            "warning_count": warning_count,
+            "http_5xx_count": http_5xx,
+            "error_rate_percent": round(error_rate, 2),
+            "is_anomaly_suspect": error_rate > 5.0
+        }
+        base_dir = os.path.dirname(target_path)
+        feature_file = os.path.join(base_dir, "features.json")
+        print(f"DEBUG: Calculated Features: {features}")
+        print(f"DEBUG: Saving features to -> {feature_file}")
+
+        with open(feature_file, 'w') as f_out:
+            json.dump(features, f_out, indent=2)
+
+        print(f"DEBUG: 📊 Features saved to -> {feature_file}")
+        return f"Feature extraction complete. Metrics saved to: {feature_file}"
+
+    except Exception as e:
+        return f"Error during preprocessing: {str(e)}"
+    
 # --- Helper Functions ---
 
 async def run_session(
@@ -128,6 +194,18 @@ def create_log_ingestor_agent(model: Gemini) -> Agent:
         tools=[FunctionTool(ingest_logs)],
     )
 
+# --- Add this to your Agent Construction section ---
+
+def create_preprocessor_agent(model: Gemini) -> Agent:
+    """An agent that takes raw logs and outputs feature vectors."""
+    return Agent(
+        model=model,
+        name="preprocessor_agent",
+        description="Reads file paths, calculates error rates/stats, and saves feature files.",
+        tools=[FunctionTool(extract_features)],
+    )
+
+
 async def get_orchestrator_agent() -> SequentialAgent:
     """An agent that orchestrates various sub-agents to perform complex tasks."""
     
@@ -139,11 +217,12 @@ async def get_orchestrator_agent() -> SequentialAgent:
 
     # Initialize Sub-Agent
     log_ingestor = create_log_ingestor_agent(model=orchestrator_model)
+    preprocessor = create_preprocessor_agent(model=orchestrator_model)
 
     # Return the Composite Agent
     return SequentialAgent(
         name="capstone_orchestrator",
-        sub_agents=[log_ingestor]
+        sub_agents=[log_ingestor, preprocessor]
     )
 
 # --- Main Execution ---
@@ -161,8 +240,9 @@ async def main():
         session_service=session_service
     )
     
-    user_query = "Please ingest the logs from 'synthetic_nodejs_logs.json'"
-    
+    user_query = "Please ingest the logs from 'synthetic_nodejs_logs.json' and extract key features like error rates and 5xx counts without asking to continue"
+    # user_query = "Please Extract key features like error rates and 5xx counts."
+
     await run_session(
         runner,
         user_queries=[user_query],
