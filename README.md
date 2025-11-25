@@ -68,5 +68,5 @@ The DevOps Agent generated the following infrastructure runbook:
 ### Installation
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/adk-observability-system.git](https://github.com/your-username/adk-observability-system.git)
-   cd adk-observability-system
+   git clone [https://github.com/ashishcas/predictive-incident-response.git](https://github.com/ashishcas/predictive-incident-response.git)
+    ```
