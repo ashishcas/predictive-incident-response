@@ -6,7 +6,7 @@ import dotenv
 from typing import Any, Dict
 
 # ADK Imports
-from google.adk.agents import Agent, SequentialAgent
+from google.adk.agents import Agent, SequentialAgent, LlmAgent
 from google.adk.models import Gemini
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
@@ -39,6 +39,7 @@ retry_config = types.HttpRetryOptions(
     http_status_codes=[429, 500, 503, 504],
 )
 
+# --- Tool Functions ---
 def ingest_logs(log_file: str) -> str:
     """
     Ingests logs from a source file, saves them to session storage, 
@@ -125,15 +126,34 @@ def extract_features() -> str:
         feature_file = os.path.join(base_dir, "features.json")
         print(f"DEBUG: Calculated Features: {features}")
         print(f"DEBUG: Saving features to -> {feature_file}")
-
+        PIPELINE_STATE["latest_feature_artifact"] = feature_file;
         with open(feature_file, 'w') as f_out:
             json.dump(features, f_out, indent=2)
 
+        PIPELINE_STATE["latest_feature_artifact"] = feature_file
         print(f"DEBUG: 📊 Features saved to -> {feature_file}")
         return f"Feature extraction complete. Metrics saved to: {feature_file}"
 
     except Exception as e:
         return f"Error during preprocessing: {str(e)}"
+
+def fetch_metrics_for_analysis() -> str:
+    """
+    Retrieves the calculated feature set from the global state so the LLM can analyze it.
+    """
+    feature_path = PIPELINE_STATE.get("latest_feature_artifact")
+    print(f"DEBUG: 🔍 Fetching metrics from -> {feature_path}")
+
+    if not feature_path or not os.path.exists(feature_path):
+        return "❌ Error: No feature file found."
+
+    try:
+        with open(feature_path, 'r') as f:
+            features = json.load(f)
+        return json.dumps(features, indent=2)
+
+    except Exception as e:
+        return f"❌ Error fetching metrics: {str(e)}"
     
 # --- Helper Functions ---
 
@@ -194,7 +214,6 @@ def create_log_ingestor_agent(model: Gemini) -> Agent:
         tools=[FunctionTool(ingest_logs)],
     )
 
-# --- Add this to your Agent Construction section ---
 
 def create_preprocessor_agent(model: Gemini) -> Agent:
     """An agent that takes raw logs and outputs feature vectors."""
@@ -205,6 +224,32 @@ def create_preprocessor_agent(model: Gemini) -> Agent:
         tools=[FunctionTool(extract_features)],
     )
 
+
+# Need to improvise this logic to add db timeouts heap memory usage, cpu spikes etc.
+def create_anomaly_detector_agent(model: Gemini) -> Agent:
+    """
+    Creates an agent acting as a Site Reliability Engineer (SRE).
+    It uses the LLM to interpret metrics rather than hard-coded rules.
+    """
+    sre_instructions = """
+    You are a Senior Site Reliability Engineer (SRE). 
+    Your job is to analyze system metrics and decide if the system is healthy or failing.
+    
+    1. Call the tool 'fetch_metrics_for_analysis' to get the latest data.
+    2. Analyze the JSON output, paying close attention to 'error_rate_percent' and 'http_5xx_count'.
+    3. Use your judgment:
+       - If error rates are negligible (near 0%) and 5xx count is 0, report: "✅ SYSTEM NORMAL".
+       - If you see critical failures (any 5xx errors) or high error rates (>3%), report: "🚨 ANOMALY DETECTED".
+    4. Briefly explain your reasoning based on the data provided.
+    """
+    
+    return LlmAgent(
+        model=model,
+        name="anomaly_detector",
+        description="Analyzes metrics using LLM reasoning to detect complex anomalies.",
+        instruction=sre_instructions,
+        tools=[FunctionTool(fetch_metrics_for_analysis)],
+    )
 
 async def get_orchestrator_agent() -> SequentialAgent:
     """An agent that orchestrates various sub-agents to perform complex tasks."""
@@ -218,11 +263,12 @@ async def get_orchestrator_agent() -> SequentialAgent:
     # Initialize Sub-Agent
     log_ingestor = create_log_ingestor_agent(model=orchestrator_model)
     preprocessor = create_preprocessor_agent(model=orchestrator_model)
+    detector = create_anomaly_detector_agent(model=orchestrator_model)
 
     # Return the Composite Agent
     return SequentialAgent(
         name="capstone_orchestrator",
-        sub_agents=[log_ingestor, preprocessor]
+        sub_agents=[log_ingestor, preprocessor, detector]
     )
 
 # --- Main Execution ---
@@ -235,13 +281,20 @@ async def main():
     root_agent = await get_orchestrator_agent()
 
     runner = Runner(
-        app_name=APP_NAME, 
+        app_name=APP_NAME,
         agent=root_agent, 
         session_service=session_service
     )
     
-    user_query = "Please ingest the logs from 'synthetic_nodejs_logs.json' and extract key features like error rates and 5xx counts without asking to continue"
+    # user_query = ""
     # user_query = "Please Extract key features like error rates and 5xx counts."
+    # user_query = (
+    #     "Please ingest the logs from 'synthetic_nodejs_logs.json' and extract key features like error rates and 5xx counts without asking to continue"
+    #     "and then analyze those metrics for anomalies. "
+    #     "Execute the full pipeline immediately without asking for confirmation between steps."
+    # )
+    user_query = "Please ingest the logs from 'synthetic_nodejs_logs.json'"
+
 
     await run_session(
         runner,
