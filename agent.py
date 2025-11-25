@@ -27,7 +27,7 @@ MODEL_NAME = "gemini-2.5-flash-lite"
 APP_NAME = "log_ingestion_app"
 USER_ID = "test_user"
 SESSION_NAME = "ingestion_session"
-LOG_FILE_PATH = "/Users/ashish/Documents/genai/predictive-incident-response/synthetic_nodejs_logs.json"
+LOG_FILE_PATH = "./synthetic_nodejs_logs.json"
 PIPELINE_STATE = {
     "latest_log_artifact": None,
     "latest_feature_artifact": None
@@ -459,7 +459,7 @@ def create_anomaly_detector_agent(model: Gemini) -> Agent:
         model=model,
         name="anomaly_detector",
         description="Analyzes metrics using LLM reasoning to detect complex anomalies.",
-        system_instructions=sre_instructions,
+        instruction=sre_instructions,
         tools=[FunctionTool(fetch_metrics_for_analysis)],
     )
 
@@ -474,7 +474,7 @@ def create_predictor_agent(model: Gemini) -> Agent:
         model=model,
         name="predictor_agent",
         description="Forecasting agent that uses ML models to predict future system states.",
-        system_instructions=instructions,
+        instruction=instructions,
         tools=[FunctionTool(predict_failure_risk)],
     )
 
@@ -497,7 +497,7 @@ def create_rca_agent(model: Gemini) -> Agent:
         model=model,
         name="rca_agent",
         description="Correlates logs, metrics, and past incidents to determine root cause.",
-        system_instructions=rca_instructions,
+        instruction=rca_instructions,
         tools=[FunctionTool(perform_root_cause_analysis)],
     )
 
@@ -517,7 +517,7 @@ def create_remediation_agent(model: Gemini) -> Agent:
         model=model,
         name="remediation_agent",
         description="Maps root causes to specific infrastructure remediation commands.",
-        system_instructions=devops_instructions,
+        instruction=devops_instructions,
         tools=[FunctionTool(generate_remediation_plan)],
     )
 
