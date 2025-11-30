@@ -70,3 +70,76 @@ The DevOps Agent generated the following infrastructure runbook:
    ```bash
    git clone https://github.com/ashishcas/predictive-incident-response.git
     ```
+
+## ✅ Evaluation Results
+
+The system includes a comprehensive evaluation suite `evals.py` that verifies the functionality of individual agents and the end-to-end pipeline.
+
+**Run the evals:**
+```bash
+python3 evals.py
+```
+
+**Sample Output:**
+```json
+Testing ingest_logs...
+✅ Success. Ingested 100 logs. Data saved to artifact: '.../session_artifacts/ingested_logs_output.json'
+
+Testing extract_features...
+Feature extraction complete. Metrics saved to: .../session_artifacts/features.json
+
+Testing predict_failure_risk...
+{
+  "timestamp": "2025-11-23T09:30:00Z",
+  "model_type": "LogisticRegression_Sim",
+  "metrics": {
+    "error_rate": 13.0,
+    "5xx_count": 13
+  },
+  "failure_probability": 1.0,
+  "risk_score_logit": 24.15,
+  "risk_level": "CRITICAL",
+  "predicted_failure_mode": "Database Connection Timeout",
+  "time_horizon": "15 minutes"
+}
+
+Testing perform_root_cause_analysis...
+{
+  "current_incident_evidence": {
+    "features": {
+      "total_logs": 100,
+      "error_count": 13,
+      "warning_count": 17,
+      "http_5xx_count": 13,
+      "error_rate_percent": 13.0,
+      "is_anomaly_suspect": true
+    },
+    ...
+  },
+  "similar_past_incidents": [
+    {
+      "id": "INC-2023-001",
+      "similarity": "98%",
+      "description": "High 5xx errors caused by Database Connection Pool exhaustion.",
+      "resolution": "Increased max_pool_size in payment-service config."
+    }
+  ]
+}
+
+Testing generate_remediation_plan...
+DEBUG: 🛠️ Remediation Agent generating action plan...
+DEBUG: 📝 Remediation Plan Created: [
+  {
+    "step": 1,
+    "action": "scale_up_replicas",
+    "command": "kubectl scale statefulset payment-db --replicas=5",
+    "risk_level": "HIGH",
+    "status": "PENDING_APPROVAL"
+  }
+]
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.006s
+
+OK
+```
