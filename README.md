@@ -1,5 +1,8 @@
 # 🤖 Multi-Agent Observability & Predictive Incident Response System
 
+
+![System Banner](assets/banner.png)
+
 ![System Status](https://img.shields.io/badge/System-Operational-green) ![Agents](https://img.shields.io/badge/Agents-6_Active-blue) ![Powered By](https://img.shields.io/badge/Powered_By-Google_ADK_%26_Gemini-orange)
 
 An intelligent, multi-agent system designed to predict, analyze, and remediate system failures autonomously. It leverages **Google ADK** and **Gemini** to ingest logs, detect anomalies, perform Root Cause Analysis (RCA), and suggest infrastructure fixes.
